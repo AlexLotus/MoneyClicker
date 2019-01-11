@@ -1,0 +1,61 @@
+<div class="container-fluid">
+  <div class="content">
+      
+    <div class="hidden-scrollbar">
+      <div class="inner">
+          <div class="but">
+              <img width="40vh" style="margin:25%;" (click)="closeShop()" src="assets/close.png">
+            </div>
+        <div class="shopHeader">
+          
+          <h1>Money Shop</h1>
+          <h2>Money ${{money | number:'1.2-2'}} dollars</h2>
+        </div>
+        <div class="clickUpgrade">
+          <mat-grid-list class="tile" cols="1" rowHeight="2:1" gutterSize="5%">
+            <mat-grid-tile (click)="upgradeClicker(clickMultiplier)">
+              <div class="innerTileY">
+                <div class="cM centerUP">
+                  <img class="clickM" src="assets/clickMult.png">
+                </div>
+                <div class="botP">
+                  <div class="infoP centerUP">
+                    <h4>{{clickMultiplier*2 | number:'1.2-2'}} dollars per click</h4>
+                  </div>
+                  <div class="priceP centerUP">
+                    <h5>Purchase - 
+                      <img src="assets/dollar.png">
+                      {{((clickMultiplier + 300*2*(clickMultiplier/7))/4) | number:'1.2-2'}}</h5>
+                  </div>
+                </div>
+              </div>
+            </mat-grid-tile>
+          </mat-grid-list>
+        </div>
+        <div class="perSecondUpgrades">
+          <mat-grid-list class="tile" cols="2" rowHeight=".70:1" gutterSize="5%">
+            <mat-grid-tile *ngFor="let upgrade of upgrades" (click)="upgradeNow(upgrade.price, upgrade.multiplier, upgrade.id)">
+              <div [ngClass]="{'innerTile': upgrade.multiplier>=1, 'innerTileB': upgrade.multiplier < 1}">
+                <div class="topP centerUP">
+                  <img [src]="upgrade.imgUrl">
+                </div>
+                <div class="botP">
+                  <div class="infoP centerUP">
+                    <div>
+                      <h4>{{upgrade.name}}</h4>
+                    </div>
+                  </div>
+                  <div class="priceP centerUP">
+                    <h5>Purchase - 
+                      <img src="assets/dollar.png">
+                      {{upgrade.price | number:'1.2-2'}}</h5>
+                  </div>
+                </div>
+              </div>
+            </mat-grid-tile>
+          </mat-grid-list>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

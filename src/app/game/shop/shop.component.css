@@ -1,0 +1,108 @@
+:host {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.container-fluid {
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+.content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: rgba(0,0,0,.5);
+    padding: 0;
+    margin: 0;
+}
+.hidden-scrollbar {
+    background-image: radial-gradient(#3A6073,#16222A);
+    border: solid 1px white;
+    border-radius: 10px;
+    color:white;  
+    overflow:hidden;
+    text-align:center; 
+    width: 90%;
+    max-width: 900px;
+    height: 80%;
+    padding: 0;
+    margin: 0;
+    
+  }
+  
+  .hidden-scrollbar .inner {
+    height:100%;
+    overflow:auto;
+    margin:15px -300px 15px 0px;
+    padding-right:300px; /* Samakan dengan besar margin negatif */
+  }
+  .innerTile {
+      width: 100%;
+      height: 100%;
+      border: solid 2px #93F9B9;
+      background-image: radial-gradient(#93F9B9,#1D976C);
+  }
+  .innerTileY {
+    width: 100%;
+    height: 100%;
+    border: solid 2px #EDDE5D;
+    background-image: radial-gradient(#EDDE5D,#F09819);
+}
+.innerTileB {
+    width: 100%;
+    height: 100%;
+    border: solid 2px #EAEAEA;
+    background-image: radial-gradient(#EAEAEA,#DBDBDB,#F2F2F2,#ADA996);
+}
+.innerTile2 {
+      width: 97%;
+      height: 90%;
+      border: solid 1px red;
+}
+.topP{height: 60%; background-image: radial-gradient(rgba(255,255,255,.3) 30%,rgba(255,255,255,0));}
+.topP img {
+    width: 60%;
+}
+.botP{height: 40%;}
+.priceP{height: 40%; background-color: rgba(0,0,0,.75);}
+.infoP{height: 60%; background-color: rgba(0,0,0,.5);}
+.centerUP {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.tile {margin: 5%;}
+h4 {
+    font-size: 2.25vh;
+}
+h5 {
+    font-size: 1.5vh;
+}
+h5 img {
+    height: 1.5vh;
+}
+.opac {
+    opacity: .4;
+}
+.clickM {
+    height: 10vh;
+}
+h1 {
+    font-size: 4vh;
+}
+h2 {
+    font-size: 3vh;
+}
+.but {
+    position: fixed;
+    z-index: 100;
+}
+.cM {
+    height: 60%;
+    background-image: radial-gradient(rgba(255,255,255,.3) 30%,rgba(255,255,255,0));
+}

@@ -1,0 +1,49 @@
+<div [@transition]='state' class="container-fluid">
+    <div class="content">
+      <div class="head">
+        <h1 class="cookies">
+          <p *ngIf="money < 1">{{money * 100 | number:'1.0-0'}} pennies</p>
+          <p *ngIf="money >= 1">${{money | number:'1.2-2'}} dollars</p>
+        </h1>
+        <h2 class="cps">
+            <p *ngIf="perSecond < .02">{{perSecond * 100 | number:'1.0-0'}} penny per second</p>
+            <p *ngIf="perSecond < 1 && perSecond > .01">{{perSecond * 100 | number:'1.0-0'}} pennies per second</p>
+            <p *ngIf="perSecond >= 1">{{perSecond | number:'1.0-2'}} dollars per second</p>
+        </h2>
+      </div>
+    </div>
+
+
+    <div class="content1">
+      <div [@coinClick]="moneyClicker" (@coinClick.done)="finishClick()" (click)="clickMoney()" class="cookie">
+        <img class="userS" src="../../assets/coinv2.png">
+      </div>
+    </div>
+
+
+    <div class="content2">
+      <div class="row">
+        <div class="col">
+          <img (click)="saveGame()" routerLink="/home" [@menuButton]="clickButton1" (click)="makeState1()" (@menuButton.done)="undoState()" class="shop" src="assets/Game/menu.png">
+        </div>
+        <div (click)="shopStateFunc()" class="col">
+          <img [@menuButton]="clickButton" (click)="makeState()" (@menuButton.done)="undoState()" class="shop" src="assets/Game/Store.png">
+        </div>
+        <div class="col">
+          <img (click)="saveGame()" [@menuButton]="clickButton3" (click)="makeState3()" (@menuButton.done)="undoState()" class="shop" src="assets/Game/save.png">
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-shop
+  [@openUpShop]='shopState'
+  (closeTheShop)="closeUpShop($event)"
+  [money]="money"
+  [clickMultiplier]="clickMultiplier"
+  [perSecond]="perSecond"
+  (newMoney)="newMoney($event)"
+  (newClickMult)="newClickMult($event)"
+  (newPerSecond)="newPerSecond($event)"
+  [upgrades]="upgrades"
+  (upg)="countUpg($event)"
+  ></app-shop>
